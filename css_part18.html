@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-18</title>
+    <style>
+      .parent {
+        font-size: 25px;
+      }
+      #checks {
+        accent-color: black;
+        transform: scale(1.5);
+      }
+      /* label {
+        display: none;
+      }
+      .parent:has([type="checkbox"]:checked) label {
+        display: inline-block;
+      } */
+
+      .parent label {
+        display: none;
+      }
+
+      .parent input[type="checkbox"]:checked + label {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        ! SOME NEW AND IMP PSEUDO-CLASSES
+        ---------------------------------
+        ? 1) ':is()' 
+        * The `:is()` pseudo-class allows you to match an element if it matches any of a list of selectors provided within the parentheses. This helps in reducing redundancy and improving specificity in your CSS.
+        * ex:
+        :is(h1, h2, h3, h4, h5, h6) {
+            color: red;
+        }
+
+        ? 2) ':where()'
+        * the same as `:is()` but is have a lowest specificity as if you have styled any element before and again you are providing a selector for that element to `:where()` then its styling is not going to be applied on that element because even the specificity of the element selector is more than `:where()`.
+
+        ? 3) ':has()'
+        * The `:has()` pseudo-class selects elements that contains a specific elements that match the provided selector.
+        * The `:has()` pseudo-class selects elements that contain at least one element matching the selector provided within the parentheses, allowing you to style parent elements based on the presence of specific child elements.
+        * ex:
+        div:has(> img) {
+            border: 2px solid red;
+        }
+
+        ? 4) ':not()'
+        * the `:not()` pseudo-class allows you to select elements that do not match the selector. its commonly used to exclude specific elements from being styled.
+        * The `:not()` pseudo-class in CSS is used to exclude elements that match a certain selector, allowing you to apply styles to elements that do not match the specified criteria.
+        * The `:not()` pseudo-class selects elements that do not match the selector provided within the parentheses, enabling you to exclude specific elements from a set of matched elements.
+        * ex:
+        p:not(.highlight) {
+            color: gray;
+        }
+    -->
+    <div class="parent">
+      <input type="checkbox" name="checks" id="checks" />
+      <!-- <label for="checks">check me now!</label> -->
+      <label for="checks">YAY! i am selected!</label>
+    </div>
+  </body>
+</html>

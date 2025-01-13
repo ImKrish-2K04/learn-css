@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+      }
+
+      .container {
+        height: 300px;
+        width: 100%;
+        background-image: url(../others/images/scorpion-fight.jpg);
+        font-size: 150px;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-size: 100vw 60vh;
+        background-position: top left;
+        color: white;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! Background Properties
+    -----------------------
+
+    * there are many properties related to background and each of them has varieties of values. like,
+
+    ? 1) background-color, 2) background-image, 3) background-repeat, 4) background-position, 5) background-size, 6) background-attachment, etc...
+
+    ? 1) background-color:
+    * used for set background color of any html element...
+    * ex.: background-color: blue;
+
+    ? 2) background-image:
+    * background-image is a property used to set an image as a background of any element...
+    * ex.: background-image: url('link_address');
+
+    ? 3) background-repeat:
+    * background-repeat is a property that enables us to repeat a certain image horizontally or vertically or both or we can simply set it to no-repeat so its repetation will be stop if the image size is smaller than the display size...
+    * in other words, this property is used to define whether the image is going to be repeated or not by specifying its values...
+    * ex.: background-repeat: repeat;
+    * ex.: background-repeat: repeat-x;
+    * ex.: background-repeat: repeat-y;
+    * ex.: background-repeat: no-repeat;
+
+    ?4) background-position:
+    * this property is used to set the image according to our need by providing a position coordinates in any units or using 4 very useful parameters: top, left, bottom, right.
+    * for an instance, your image is too big and you do not want to set its size but you want to position that image as any specific part of that image will be shown perfectly to the user... that need is done using background-position which allows to positioning the background image as per our need...
+    * ex.: background-position: top right;
+    * ex.: background-position: bottom left;
+    * ex.: background-position: 50% 50%; // it will positions image on the center of screen.
+    ? you can use px, %, etc. units also to set bg-image positions...
+
+    ? 5) background-size:
+    * this property is most often used when it comes to set the image as a background(i.e when using background-image property).
+    * this property is used to cover our image according to our display size either by stretching it to set it which will also stretched some times too much or to cover that image according to its size to cover almost area but not stretching to the image...
+    * ex.: background-size: auto;
+    ? does everything related to image size automatically, by-default property value...
+    * ex.: background-size: cover;
+    ? it crops part of the image and scaled to cover the entire element...
+    * ex.: background-size: contain;
+    ? background-image is scaled to fit the image within the element, maintaining its aspect ratio...
+
+    ? 6) background-attachment
+
+    * The `background-attachment` property specifies whether a background image should scroll with the content or stay fixed. Here are its possible values:
+
+    * 1. initial
+    *    Sets the property to its default value (scroll). No changes are made.
+
+    * 2. inherit
+    *    Inherits the value from its parent element. This is useful when you want to ensure consistency across nested elements.
+
+    * 3. fixed
+    *    The background image stays fixed in place, even when the content is scrolled.
+
+    * 4. scroll
+    *    The background image scrolls along with the content. This is the default behavior.
+
+    * 5. local
+    *    The background image scrolls with the content of the element to which it is applied, not with the entire document. For example, if set on a `div`, the image will move as the `div`’s content scrolls, but not when the whole page scrolls.
+
+        ? Detailed Examples:
+
+        * 1. fixed
+
+        body {
+          background-image: url('image.jpg');
+          background-attachment: fixed;
+        }
+
+        * The image will stay fixed in place while the content of the body scrolls.
+
+        * 2. scroll
+
+        body {
+          background-image: url('image.jpg');
+          background-attachment: scroll;
+        }
+
+        * The image will move up and down as you scroll the page content.
+
+        * 3. local
+
+        div {
+          background-image: url('image.jpg');
+          background-attachment: local;
+          height: 200px;
+          overflow: auto;
+        }
+         
+        * The image will scroll with the `div`’s content if the content is scrollable (e.g., if the `div` has a fixed height with overflow).
+    
+
+    -->
+
+    <div class="container">
+      <p>KRISHNA</p>
+    </div>
+  </body>
+</html>

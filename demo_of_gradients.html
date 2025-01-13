@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo of codes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .container > .box {
+        height: 45%;
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: 0 0 5px black;
+        /* background-image: linear-gradient(red, yellow); */
+        /* background-image: linear-gradient(to right, #dae2f8, #d6a4a4); */
+        /* background-image: linear-gradient(to top right, red, yellow); */
+        /* background-image: linear-gradient(45deg, red, yellow); */
+        /* background-image: radial-gradient(circle, red, yellow); */
+        /* background-image: repeating-linear-gradient(
+          90deg,
+          rgb(255, 152, 152),
+          rgb(255, 255, 124),
+          rgb(113, 113, 255) 51.2px
+        ); */
+        /* background-image: radial-gradient(circle, red, yellow, green); */
+        /* background-image: radial-gradient(ellipse, red, yellow, green); */
+        /* background-image: radial-gradient(circle, red 20%, yellow 40%, green 40%); */
+        /* background-image: repeating-radial-gradient(
+          circle,
+          red,
+          yellow,
+          darkblue 50px
+        ); */
+        /* background-image: radial-gradient(
+          circle at center,
+          #ff5733 0%,
+          #ffc300 20%,
+          #ff5733 40%,
+          #2980b9 60%,
+          #33ff57 80%,
+          #2980b9 100%
+        ); */
+      }
+
+      .container > .box2 {
+        height: 50%;
+        background-image: linear-gradient(to right, #fffbd57d, #b20a2c7d),
+          url("./others/images/adiyogi_minimal.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position: center;
+      }
+
+      .container .box2:hover {
+        background-size: 120%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+    </div>
+  </body>
+</html>

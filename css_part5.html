@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-5</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container .box {
+        cursor: pointer;
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        box-shadow: 0 5px 10px black;
+        background-image: linear-gradient(
+            to top left,
+            rgba(195, 20, 50, 0.49),
+            rgba(36, 11, 54, 0.49)
+          ),
+          url(../others/images/adiyogi_minimal.png);
+        background-size: 175% 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position: center;
+        transition: background-size 0.4s ease-out;
+      }
+
+      .container .box:hover {
+        background-size: 180% 105%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        ! CSS GRADIENTS:
+        ----------------
+
+            ? there are 2 types of CSS GRADIENTS...
+
+            ? 1) linear-gradient
+            --------------------
+            * as the name implies, linear-gradient is used to create a line-structured gradient. gradient is a mixture of 2 or more colors, therefore here we are required to provide atleast 2 colors for create a linear-gradient effect...
+            * the linear-gradient is itself a property and value...
+            * means, it is a value of background-image property to set it as a background of any element and it is a property because it requires some values to create a gradient...
+            * its basic syntax is as following...
+            * background-image: linear-gradient(color-stop1, color-stop2, ...);
+            
+            * linear-gradient with direction:
+            * 'to right', 'to left', 'to top', 'to bottom', etc...
+            * background-image: linear-gradient(to right, color-stop1, color-stop2, ...);
+
+            * linear-gradient with angles:
+            * background-image: linear-gradient(90deg, color-stop1, color-stop2, ...);
+
+            ? 2) radial-gradient
+            --------------------
+            * is used to create a radial/circular gradient style...
+            * just use 'radial' instead of 'linear'...
+            * background-image: radial-gradient(shape, color-stops);
+
+    -->
+
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-11</title>
+
+    <style>
+      /* Reset and box-sizing rules */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      /* Base container styles */
+      .container {
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        ! CSS MEDIA QUERIES
+        -------------------
+            ? you can write a media query of 3 types...
+            * 1) screen, 2) print, 3) speech .. here, main type is screen which enables us to make the website looking responsive as per distinct device screen / viewport.
+
+            ? you can write a media queries as follows...
+
+            ? syntax:
+
+            @media media_type operator (condition) {
+                css_code{
+                    declarations...
+                }
+            }
+
+            ? ex:
+
+            @media screen and (max-width: 900px) {
+                .container {
+                    width: 50%;
+                }
+            }
+
+            ? logical operators: 'and' | 'not' | 'only'
+
+            ? Desktop : ranging from 1280 x 720 to 1920 x 1080 ...
+            ? Tablets : ranging from 601 x 962 to 1280 x 800 ...
+            ? Mobiles : ranging from 360 x 640 to 414 x 896 ...
+    -->
+
+    <!-- 
+    ! commonly used one (maybe but it is...)
+    ----------------------------------------
+
+      /* Base container styles */
+      .container {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      /* Desktop and larger devices (up to 1920px) */
+      @media screen and (max-width: 1920px) {
+        .container {
+          background-color: red;
+        }
+      }
+
+      /* Tablets and larger mobile devices (up to 800px) */
+      @media screen and (max-width: 800px) {
+        .container {
+          background-color: green;
+        }
+      }
+
+      /* Smaller mobile devices (up to 414px) */
+      @media screen and (max-width: 414px) {
+        .container {
+          background-color: blue;
+        }
+      }
+
+      ! in most area same as above but media query writing style is different!
+      ------------------------------------------------------------------------
+
+      /* Base container styles */
+      .container {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      /* Mobile devices (up to 414px) */
+      @media screen and (max-width: 414px) {
+        .container {
+          background-color: blue; /* Example color for mobiles */
+        }
+      }
+
+      /* Tablets and larger devices (415px and above) */
+      @media screen and (min-width: 414px) {
+        .container {
+          background-color: green; /* Example color for tablets and large mobiles */
+        }
+      }
+
+      /* Average desktops and larger devices (801px and above) */
+      @media screen and (min-width: 801px) {
+        .container {
+          background-color: red; /* Example color for desktops and larger devices */
+        }
+      }
+    -->
+
+    <div class="container"></div>
+  </body>
+</html>

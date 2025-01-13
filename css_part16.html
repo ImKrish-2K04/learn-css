@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-16</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+      }
+
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background-color: #363333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 10px inset rgb(49, 118, 146);
+      }
+
+      .container img {
+        width: 650px;
+        height: 400px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px -3px rgb(255, 0, 255);
+        transition: all 0.4s ease-out;
+      }
+
+      .container img:hover {
+        /* transform: translateX(500px); */
+        /* transform: translateY(100px); */
+        /* transform: translate(300px, 100px); */
+        /* translate: 300px 100px; */
+        /* transform: scaleX(2); */
+        /* transform: scaleY(2); */
+        /* transform: scale(1.5, 1.5); */
+        /* scale: 1.5; */
+        /* scale: 1.5 1.5; */
+        /* transform: rotate(360deg); */
+        /* rotate: 360deg; */
+        /* transform: skewX(10deg); */
+        /* transform: skewY(10deg); */
+        /* transform: skew(10deg, 10deg); */
+        transform-origin: left;
+        /* rotate: 10deg;
+        translate: 20px 50px;
+        scale: 1.1; */
+        /* transform: scale(1.1) translate(20px, 50px) rotate(10deg);*/ /*you can put it in any order */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! TRANSFORM
+    -----------
+
+    ? in this property there are few value-functions like,
+    * 'scale' , 'translate' , 'rotate' , 'skew' , more...
+
+      ? 1 : transform: translate(value in units)
+
+      ? 2 : transform: scale(1-n(for big in size) || 0.n(for less in size))
+
+      ? 3 : transform: rotate(angles)
+
+      ? 4 : transform: skew(angles)
+
+      ! MOST IMP: 'transform-origin'
+      * the 'transform-origin' property in css allows you to specify the point around which a transformation should occur. it determines the origin point for transformation functions like, rotate, translate, skew and scale. understanding how transform origin works is crucial for controling the position and behavior of transformed elements.
+  -->
+
+    <div class="container">
+      <img
+        src="./ThapaTech_CSS_TUTs/others/images/madara_minimal.png"
+        alt="madara_minimal"
+      />
+    </div>
+  </body>
+</html>

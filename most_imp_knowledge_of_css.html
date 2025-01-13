@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css knowledge</title>
+    <style>
+      * {
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* it is in indetermine order so you can understand which will executes */
+
+      #p1 {
+        color: red !important;
+        background-color: black;
+      }
+
+      p {
+        color: red;
+      }
+
+      p#p1.pc1 {
+        color: white;
+        background-color: teal;
+      }
+
+      .pc1 {
+        color: blue;
+      }
+
+      #p1.pc1 {
+        color: blue;
+        background-color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! The most imp topic of CSS
+    ---------------------------
+      * there are 3 most imp topic of css to which we must have to understand without any doubts and have to master its knowledge...
+
+      * CASCADE  |  SPECIFICITY  |  INHERITANCE
+
+      ? CASCADE:
+      ----------
+
+        * when we are going gor full form of CSS, it is 'Cascading Style Sheet' and there is one word 'Cascading' which meaning is 'from top to bottom' is tells how the CSS works...
+
+        * that means the styling for element n declared is override by the styling declared again for that element...
+
+        !ex: 
+        p {
+          color: white;
+          bgcolor: darkgreen;
+        }
+
+        p {
+          color: skyblue;
+          bgcolor: black;
+        }
+        
+        * let's understand cascading by the example above. in the that example, we have declared style for the same tag 'p' two times.
+
+        * in the first styling, the browser had applied those rules of styling over 'p' tag. but thereafter, again the different styling rules for that tag are declared and browser had again catched those rules and applied them on 'p' tag...
+
+        * so, this is called cascade. means, if we have declared rules for n element and after few lines of code or exactly after its declaration we are again declaring rules for that element then they will be considered...
+
+        * but, not always the cascading matters. there is something which is over the cascading, is called specificity...
+      
+      ? SPECIFICITY:
+      --------------
+
+        * there are some rules in specifity...
+
+        * specificity is expressed in the syntax of (a  ->  b  ->  c)...
+
+        * 'a' -> styling applied through the inline styling.
+
+        * 'b' -> styling applied using id selector.
+
+        * 'c' -> styling applied through...
+        *        class selector.  // more
+        *        attribute selector and element.  // less than class
+        *        pseudo selector. // but in order means if both are defined class and element selector styling then the class styling will considered as more specific than attribute or element selector's...
+
+        * here speificity is considered as over the cascading. means, of we are styling <p> first using element selector and then we are using class selector for styling the same one then the class selector will be considered more specific. for ex.
+          <p class="para">this is first paragraph...</p>
+        * here we have declared one <p> element, now we are styling it using same properties but with different values with different selectors and then see what happens, nothing changes here because here we have only 2 choices, either we can use element selector or we can use class selector and if we are declaring the different styling using both selectors then only the styling by class selector will be applied, no matter first which selector has declared styling. therefore the specificity is called above the cascading because there is order not matters. following is the importance chart which clearly defines which style will considered most important and to be applied on a particular element...
+          * ID                   : (1,0,0) // most imp
+          * CLASS                : (0,1,0) // least imp than id
+          * element || attribute : (0,0,1) // least imp than class
+          * the least will be a pseudo selector...
+        
+        * here one more twist is came, which may confuses to our self but keep your seat tight because it will going to be easy, just read with full concentration...
+
+        * the importance of application of styling rules over the specific elements is considered by both the 'specificity' and 'cascade', not only one...
+
+        * let's understand something new using both the concepts. suppose,
+        * <p id="p1" class="pc1">first paragraph...</p>
+        * then the specificity is in different cases are as follows...
+
+        *  p{}          // (0,0,1)
+        * .pc1{}        // (0,1,0)
+        * #p1{}         // (1,0,0)
+        * #p1.pclass1   // (1,1,0)
+        * p#p1.pclass1  // (1,1,1)
+
+      ? INHERITANCE:
+      --------------
+
+        * the inheritance in css is way simple to understand.
+
+        * when we have declared one container and some code is inside that container, then some styling rule applied on that container will also inherited by the child of that container. like,
+
+        <div>
+          <p>i am paragraph</p>
+          <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+        </div>
+
+
+        * if we are going to apply some css properties like.. color:red, font-family:cursive to 'DIV', it will also be inherited by its childs i.e p and list items. but suppose, div also contains a <button> then those rules are not directly inherited by button.
+
+        * there is one another thing, is called a specificity killer is a keyword '!important', is not increasing the specificity, but is makes the importance of the element's styling the most, so not even an inline-styling can override its styling...
+
+        p {
+          color: white !important;
+          background-color: green !important;
+        }        
+    -->
+    <p id="p1" class="pc1">first paragraph...</p>
+  </body>
+</html>

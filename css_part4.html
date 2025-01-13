@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-4</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- 
+        ! BOX-MODAL     ..MOST-IMP..
+        ----------------------------
+
+        ? box-modal is completely build-up or we can say based on the following 4 things...
+          * content
+          * padding
+          * border
+          * margin
+
+        ? these 4 are used to calculate the size of a certain element on a webpage to successfully adjust everything on webpage and create a perfect and fully responsive website and define our website is working perfectly...
+
+        ? refer box-modal image in the current main directory...
+
+            ! BORDERs:
+            ----------
+
+            ? border: border-width border-style border-color;
+
+            mutliple styles of borders: none, hidden, dotted, dashed, double, groove, ridge, inset, outset.
+
+            ? border-style: dotted solid;
+            * top & bottom | left & right
+            * this sets the different border styles for different parts like here, 'top-bottom is dotted border' and 'left-right is solid border'...
+
+            ? border-style: hidden double dashed;
+            * top | left & right | bottom
+            * border-top is set by 'hidden', border-left and right is set by 'double' and border-bottom is set by 'dashed'...
+
+            ? we can set the radius of border according to our need,
+            * border-radius: 4px; // for all sides...
+            * border-radius: 10px 20px; // tl_&_br | tr_&_bl
+            * border-radius: 5px 10px 15px 20px; // tl | tr | br | bl
+
+            ? individual properties:
+
+            * border-width
+            * border-style
+            * border-color
+            * border-top
+            * border-bottom
+            * border-left
+            * border-right
+            * border-top-color||width||style
+            * border-left-color||width||style
+            * border-right-color||width||style
+            * border-bottom-color||width||style
+            * border-radius
+            * border-top-left-radius
+            * border-top-right-radius
+            * border-bottom-left-radius
+            * border-bottom-right-radius
+
+            ! PADDINGs
+            ----------
+
+            * padding is just a space between the content and the border of the content...
+            * padding can simple given by each 4 direction at once using declared once and also we can give padding distinctively using its different properties...
+
+            * padding: 20px; // 20px from all directions.. 'l,r,b,t -> 20px'
+            * padding: 10px 20px; // '10px from t&b | 20px from l&r'
+            * padding: 10px 30px 20px; // 'top-10px' | 'l&r-30px' | 'b-20px'
+            * padding: 5px 10px 5px 10px; // 'top | right | bottom | left'
+
+            ! MARGINs
+            ---------
+
+            ? Margin
+            --------
+              * Definition: Margin is the space outside the border of an element. It creates distance between the element and its neighboring elements.
+              * Purpose: It is used to control the amount of space between an element and the surrounding elements.
+
+            ? Key Points
+            ------------
+              * Outer Space: Margin affects the outer space of an element, pushing it away from other elements.
+              * Collapsing Margins: Vertical margins between block-level elements can collapse, meaning the larger margin value will be used instead of adding them together.
+
+            ? Margin Properties:
+            --------------------
+              * `margin-top`
+              * `margin-right`
+              * `margin-bottom`
+              * `margin-left`
+              * Shorthand: `margin`
+
+            ? Visual Representation
+            -----------------------
+              * Imagine two boxes with borders:
+              * The margin is the space outside each box's border, ensuring the boxes don't touch each other directly and have a specified distance between them.
+
+            ? Summary
+            ---------
+              * Margins are indeed the space between the borders of two elements, helping to define the layout and spacing in a web page design.
+
+            ! CSS 'BOX-SIZING' PROPERTY
+            ---------------------------
+
+            * CSS box-sizing is a property that controls how the total width and height of an element are calculated including its content, padding and border.
+            * it has 2 possible values: 1) content-box (default) , 2) border-box
+
+                ? box-sizing: content-box;
+                --------------------------
+                * it is the default value of the box-sizing property. element's height and width are calculated based on its content area. padding and border are added to the specified width and height...
+                * this means that if you set the width of an element to 100 pixels and then 10px of padding and 2px of border, the element's total width will be 100+10+2 = 112px...
+
+                ? box-sizing: border-box;
+                -------------------------
+                * it is not adding everything individually, it is makes everything well-maintained with the given size...
+                * we have given 800px of width of container
+                * we have given 20px of border and 180px of padding and 500px of content then it will just makes everything adjusted according to the provided width, means it is 700px after summing up but it will makes adjustment and then makes it 800px in anycase...
+                * mainly, padding and border remains as it is but the content will adjusted as per the width and height specified and the border and padding specified...
+    -->
+  </body>
+</html>

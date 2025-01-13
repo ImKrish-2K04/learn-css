@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-7</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container .box {
+        height: 50%;
+        width: 40%;
+      }
+
+      .container .box img {
+        border-radius: 20px;
+        box-shadow: 0 0 15px 1px black;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        transition: filter 0.5s ease-in-out;
+
+        /* filter: grayscale(1); */
+        /* filter: blur(1.5px); */
+        /* filter: brightness(1.2); */
+        filter: contrast(1);
+        /* filter: saturate(2); */
+        /* filter: hue-rotate(360deg); */
+        /* filter: invert(0); */
+        /* filter: opacity(1); */
+        /* filter: sepia(1); */
+      }
+
+      .container .box img:hover {
+        filter: contrast(2);
+        /* filter: brightness(1.2); */
+        /* filter: saturate(2); */
+        /* filter: hue-rotate(0deg); */
+        /* filter: invert(1); */
+        /* filter: opacity(0); */
+        /* filter: sepia(0); */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        ! FILTERs
+        ---------
+
+        ? there are many filter related properties (i.e filter property's value also are similar to property because they also have some values...) and the following 6 are mostly used ones...
+
+        * 1) grayscale()    2) blur()    3) invert()    4) opacity()
+        * 5) brightness()   6) contrast()
+
+        ? filters are a set of graphical effects that can be applied to HTML elements to modify their appearance. filters can alter properties like color, brightness, contrast and more...
+
+        ? grayscale()
+        * converts the element to grayscale. a value of 1 (or 100%) means fully grayscale...
+        * filter: grayscale(0.5); // 'grayscale = 50%'
+
+        ? blur()
+        * applies a blur effect to the element. the value determines the amount of blur.
+        * filter: blur(5px); // 5 pixels of blur...
+
+        ? brightness()
+        * adjusts the brightness of the element. values greater than 1 increase brightness and values less than 1 decreases it!...
+        * filter: brightness(2); // increases brightness
+
+        ? contrast()
+        * adjusts the contrast of the element. similar to brightness(), values greater than 1 will increases contrast and vice versa...
+        * filter: contrast(2);
+
+        ? saturate()
+        * increases or decreases the saturation of the element. values greater than 1 increases saturation and vice versa as above 2...
+        * filter: saturate(2);
+
+        ? hue-rotate()
+        * !NOTE: here the hue is a disc of color where there is 360 degrees and everywhere the color is presents, first comes red, second comes green and third comes blue, between these 3 all possible colors can be found!...
+        * rotates the hues of the element. values are in degrees.
+        * filter: hue-rotate(90deg); // 90-degree hue rotation...
+
+        ? invert()
+        * inverts the color of the element. a value of 1(or 100%) inverts completely.
+        * filter: invert(0.7); // inverts the color to 70%...
+
+        ? opacity()
+        * adjusts the opacity (i.e transparency) of the element. values range from 0 (completely transparent) to 1 (completely opaque/visible/no-transparent)...
+        * filter: opacity(0.5); // half visible and half transparent...
+
+        ? sepia()
+        * applies a sepia tone effect to the element. a value of 1 (or 100%) is full sepia...
+        * filter: sepia(0.7); // 70% sepia effect...
+    -->
+
+    <div class="container">
+      <div class="box">
+        <img src="../others/images/itachi_minimal.png" alt="itachi uchiha" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-10</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+
+      /* .container {
+        height: 100vh;
+        width: 100vw;
+      } */
+
+      /* .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container .box {
+        width: 50%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 70px;
+        font-weight: 900;
+        border-radius: 10px;
+        box-shadow: 0 0 10px -3px black;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(to right, #000000, #0f9b0f);
+        color: transparent;
+        background-clip: text;
+      } */
+
+      /* .container {
+        width: 75%;
+        height: fit-content;
+        margin: 50px auto;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: justify;
+        box-shadow: 0 0 7px -1.5px black;
+        column-count: 3;
+        column-gap: 5%;
+        column-rule: 2px ridge black;
+        font-size: 18px;
+        cursor: text;
+      }
+
+      .container h2 {
+        column-span: all;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .container h2::after {
+        content: "";
+        border: 2px solid black;
+        position: absolute;
+        width: 426px;
+        bottom: 0;
+        left: 0;
+      } */
+
+      /* .container .box {
+        width: 500px;
+        border: 2px ridge black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "...";
+      } */
+
+      /* .container .box {
+        width: 40%;
+        height: fit-content;
+        border: 2px ridge black;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10% auto;
+        font-size: 20px;
+        text-align: justify;
+        text-indent: 40px;
+        writing-mode: horizontal-tb;
+        writing-mode: vertical-lr;
+        writing-mode: vertical-rl;
+        writing-mode: sideways-lr;
+        writing-mode: sideways-rl;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- 
+      ! COLUMN LAYOUT IN CSS
+      ----------------------
+
+        ? there are total 4 main properties, using which we can do all things we required...
+
+        ? these properties allows to create a multi-column layout which defines easy definition of multiple columns of text - just like in newspaper...
+
+        ? 1) column-count , 2) column-gap , 3) column-rule , 4) column-fill, 5) column-span, 6) column-width, 7) column-rule-style|width|color
+
+      ! Text-overflow
+      ---------------
+
+        ? this property is used when the text is going to be overflowed and we need to make it goodlooking instead of ugly. simply, it hides the text-overflow in 2 different manners so that we can show that there is much more text but is not able to see. like in some website, to see more text we have to click that area or button to see more and for seeing more the last part of that string or word is '...', which defines that there is more to read...
+
+        ? there are total 3 properties...
+
+        ? 1) clip (default) , 2) ellipsis , 3) string
+
+        * to get that 3 dots (i.e '...') effect, we needs to use 'ellipsis' property...
+        * ex: text-overflow: ellipsis;
+
+        * to add any string like, 'etc' or anything we can use 'string' property...
+        * ex: text-overflow: 'etc';
+
+        !NOTE: to use 'text-overflow' we must have to use 'overflow:hidden' property-value pair first...
+
+      ! WRITING-MODE
+      --------------
+
+        ? there are total 5 properties...
+
+        ? 1) horizontal-tb (default) , 2) vertical-lr , 3) vertical-rl , 4) sideways-lr , 5) sideways-rl
+
+        ? these properties are used to flip the texts from right to left or left to right on both axis: x and y - horizontal and vertical...
+
+        ? only 1,4,5 numbered properties are good to use, where the 1st is default, so no worries about it but 4th and 5th one is good when we have to write something in just vertically on either left side or right side...
+      
+      ! 
+    -->
+
+    <!-- <div class="container">
+      <h2>The section is about lorem ipsum</h2>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fuga facilis
+      hic nemo iste rem qui, veritatis cum corporis. Unde corporis quas nulla
+      eos quidem reprehenderit aperiam, quam ex aspernatur fugit distinctio
+      asperiores repudiandae libero recusandae tempora inventore veniam
+      perspiciatis, excepturi, rem quisquam. Fugit voluptatum ipsa aut amet ea
+      odio possimus esse omnis veniam fugiat sed nulla soluta vitae sint, totam,
+      consectetur aliquam debitis maiores, ducimus consequuntur cumque sequi
+      magnam! Placeat, assumenda nobis, ex voluptate tempore laudantium numquam
+      reprehenderit error, hic veritatis ullam consectetur voluptatum? Dicta,
+      rem similique repudiandae doloremque hic et magnam aliquam minus,
+      temporibus omnis quo dolorum illo est beatae tempore autem vitae, non
+      corporis corrupti distinctio odit? Ipsam corrupti perferendis reiciendis
+      suscipit incidunt perspiciatis ratione, nemo necessitatibus nobis aperiam
+      aspernatur magni error aut repellat est asperiores quasi veritatis
+      blanditiis dicta fugit earum? Iusto reprehenderit, a placeat quam totam
+      magni excepturi adipisci facilis natus maxime suscipit veniam voluptate
+      cumque ducimus id quidem delectus enim cum! Exercitationem deleniti maxime
+      reprehenderit eaque soluta sint, dolores officia nisi optio ad sequi
+      temporibus magni totam commodi, ab sapiente quam, nihil accusamus minus
+      atque facere. Facere nobis optio illo quasi temporibus aliquam culpa illum
+      asperiores? Doloremque quaerat placeat laboriosam aut. Voluptate, quia
+      odit.
+    </div> -->
+
+    <!-- <div class="container">
+      <div class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus culpa,
+        possimus tempore molestiae incidunt recusandae excepturi harum fugit.
+        Impedit repudiandae earum distinctio tempore ipsa officiis repellendus
+        voluptatibus magni nihil maiores!
+      </div>
+    </div> -->
+
+    <!-- <div class="container">
+      <div class="box">MADARA UCHIHA</div>
+    </div> -->
+  </body>
+</html>

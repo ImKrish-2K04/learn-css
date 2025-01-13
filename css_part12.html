@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-12</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        user-select: none;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container img {
+        height: 400px;
+        width: 400px;
+        clip-path: ellipse(10% 35% at 75% 35%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! RESIZE
+    --------
+
+    ? this property enables us to resize the element's size (width / height)
+
+    ? there are 4 values to it..
+    * 1) horizontal , 2) vertical , 3) both , 4) none
+
+    ? here the main thing is that this property is not working as a single because it needs one its helper property, is 'overflow: auto'. without this 'helper_property-value' pair we can't use this 'resize' property...
+
+    ! CURSOR
+    --------
+    ? there is not so important about this property because it changes the cursor type for different block of html. like somewhere we need to use 'pointer' style, somewhere we needs 'text' style, and moreover as you can see in its image which is in image folder of its root directory...
+
+    ! CSS Variables
+    ---------------
+    ? to create css variables, we need to create a css block named ':root{}' and to create a variable we have to write variables inside of this block.
+    ? syntax of creating css variables: '--variable_name: value;'
+    ? how to use this variable to access value? : 'color: var(--variable_name);'
+    ? the following are few benefits of using css variables...
+
+    ? Pros of Using CSS Variables:
+    ------------------------------
+
+    ? 1. Maintainability:
+        * Single Point of Change: If you decide to change the color value later, you only need to update it in one place (`:root`), and it will automatically update everywhere the variable is used. This can save time and reduce errors.
+        * Consistency: Ensures that the same color value is used consistently throughout your project.
+
+    ? 2. Reusability:
+        * Theming: Makes it easier to implement themes. You can change the entire color scheme by updating the variables.
+        * Dynamic Changes: CSS variables can be updated dynamically with JavaScript, enabling more interactive and responsive designs.
+
+    ? 3. Readability:
+        * Semantic Naming: Using meaningful variable names (e.g., `--primary-color` instead of `--color`) can make your code more readable and self-documenting.
+
+    ? Cons of Using CSS Variables:
+    ------------------------------
+
+    ? 1. Initial Overhead:
+        * Extra Lines of Code: As you mentioned, there's an initial setup cost with a few extra lines of code.
+        * Longer Variable Names: Using `var(--color)` is slightly longer than just `red`.
+
+    ? Honest Opinion:
+    ----------------
+
+    ? For Small Projects or Simple Use Cases:
+        * If your project is small or the use of a particular value is limited and unlikely to change, directly using the value (e.g., `color: red;`) might be simpler and more straightforward.
+  
+    ? For Larger Projects or Frequent Reuse:
+        * For larger projects or cases where a value is used frequently, CSS variables can significantly improve maintainability and scalability. The initial setup cost is outweighed by the ease of updates and consistency it brings.
+
+    ? there is also local and global scope of css variables. like, if you are declaring you css vars inside :root{} then it will be considered as a global scoped. but, if you declare that variable inside any selector's block then it will be considered to be local for that element's scope and it's childs only...
+
+        * ex: 
+        .first_div{
+            --base_font: arial;
+        }
+
+        .first_div span {
+            font-family: --var(base_font);
+        }
+
+    ! calc()
+    --------
+
+    ? this function is used for mathemetics related calculations...
+    ? ex: height: calc(100% - 2rem);
+
+    ! clip-path
+    -----------
+
+    - image: ./ThapaTech_CSS_TUTs/others/images/kakashi_minimal.png
+    - height & width : 400px
+
+    ? clip-path is used to extract extra parts from an image and have a required part of the image...
+
+    ? clip-path: circle('radius' 'at' 'x-axis' 'y-axis');
+
+    * ex: 
+
+    ? following both are providing same result to us...
+    - clip-path: circle(50% at 50% 50%);
+    - border-radius: 50%;
+
+    
+        - clip-path: circle(50% at 50% 50%);
+        - 50% border-radius
+        - now the both x-axis and y-axis are needed to declared for making sure that from where we have to start to creating a circle, because the radius will only decide how big the circle is going to be and the example value similar to border-radius:50% because it matches some scenarios but if we are making some changes to radius-section of circle() then it will changes differently... like, following will give different result
+        - clip-path: circle(15% at 73% 25%);
+        - border-radius: 50%;
+        
+    ? to create an ellipse shape of image 4 values needed.
+        * x-axis, y-axis, horizontal-radius, vertical-radius
+        ? syntax: ellipse('hr-radius' 'vr-radius' at 'x-axis' 'y-axis');
+        ? ex: clip-path: ellipse(10% 35% at 75% 35%);
+    
+    ? there are more on this property but this property is not too important. if this is comes as an important topic in future then visit the following link..
+    !LINK: 'https://www.youtube.com/watch?v=Q1kfSJ2CjV8&list=PL0b6OzIxLPbzDsI5YXUa01QzxOWyqmrWw&index=52'
+    -->
+
+    <!-- 
+    ! resize
+    --------
+        .container .box {
+            height: 40%;
+            width: 30%;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.8) 0 2px 10px;
+            background-color: cornflowerblue;
+            overflow: auto;
+            resize: both;
+        }
+
+        ? html
+        ------
+        <div class="box"></div>
+
+    ! CSS VARIABLEs
+    ---------------
+
+        :root {
+            --heading_color: red;
+            --heading_bg_color: black;
+            --p_color: white;
+            --p_bg_color: purple;
+        }
+
+        h1 {
+            color: var(--heading_color);
+            background-color: var(--heading_bg_color);
+        }
+
+        p {
+            color: var(--p_color);
+            background-color: var(--p_bg_color);
+        }
+
+        ? html
+
+        <div class="box">
+            <h1>My Hobby</h1>
+            <p>My hobby is just to fuck sexy bitches!</p>
+        </div>  
+    -->
+
+    <div class="container">
+      <div class="box">
+        <img
+          src="./ThapaTech_CSS_TUTs/others/images/kakashi_minimal.png"
+          alt="kakashi_minimal"
+        />
+      </div>
+    </div>
+  </body>
+</html>

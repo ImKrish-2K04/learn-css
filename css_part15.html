@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-15</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+      }
+
+      .container {
+        background-color: black;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        padding-left: 50px;
+      }
+
+      .container .box {
+        width: 100px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: blue;
+        box-shadow: 0 0 0 15px rgba(0, 0, 255, 0.65);
+        cursor: pointer;
+        transition: all 5s;
+      }
+
+      .container .box:nth-child(1):hover {
+        translate: 75vw 0;
+        transition-timing-function: ease-in;
+        background-color: rgb(0, 0, 139);
+      }
+
+      .container .box:nth-child(2):hover {
+        translate: 75vw 0;
+        transition-timing-function: ease-out;
+        background-color: rgb(139, 56, 0);
+      }
+
+      .container .box:nth-child(3):hover {
+        translate: 75vw 0;
+        transition-timing-function: ease-in-out;
+        background-color: rgb(7, 139, 0);
+      }
+
+      .container .box:nth-child(4):hover {
+        translate: 75vw 0;
+        transition-timing-function: linear;
+        background-color: rgb(139, 0, 116);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! TRANSITIONs
+    -------------
+
+    ? there are 4 mainly important things related to transition.
+
+    * 1) transition-property, 2) transition-duration, 3) transition-timing-function, 4) transition-delay.
+
+    ? 1) transition-property:
+    * specifies which CSS property should be transitioned.
+    * ex: transitioning the font-size property of css.
+      .element {
+        transition-property: font-size;
+      }
+    
+    ? 2) transition-duration:
+    * defines how long the transition should take to complete.
+    * ex: transitioning over 1 second.
+      .element {
+        transition-duration: 1s;
+      }
+      
+    ? 3) transition-timing-function:
+    * specifies the timing curve used for transition.
+    * ex: using ease-in-out for smooth start and end.
+      .element {
+        transition-timing-function: ease-in-out;
+      }
+    
+    ? 4) transition-delay:
+    * sets a delay before the transition starts.
+    * ex: starting the transition after 0.5 second.
+      .element {
+        transition-delay: 0.5s;
+      }
+
+    ? 5) the shorthand to write all 4 properties as one for ease:
+    * transition: property-name | duration | easing function | delay;
+    * ex : transition: margin-right 4s ease-in-out 1s;
+
+    !<6>----------------------------------<6>----------------------------------<6>!
+    
+    ? ease-in: The transition starts slowly and speeds up towards the end.
+      * Visual Representation: slow<>-------<>medium<>-------<>fast
+      * Curve Shape: Starts with a shallow slope and steepens towards the end.
+
+    ? ease-out: The transition starts quickly and slows down towards the end.
+      * Visual Representation: fast<>-------<>medium<>-------<>slow
+      * Curve Shape: Starts with a steep slope and levels off towards the end.
+
+    ? ease-in-out: The transition starts slowly, speeds up in the middle, and then slows down again towards the end.
+      * Visual Representation: slow<>-------<>medium-fast<>-------<>medium-slow<>-------<>slow
+      * Curve Shape: A combination of ease-in and ease-out, with a shallow slope at the beginning and end, and a steeper slope in the middle.
+  -->
+
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-14</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        user-select: none;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right, #bbd2c5, #536976, #292e49);
+      }
+
+      .container .grid-container {
+        width: 80%;
+        background-color: #dcd7c9;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+        /* GRID STARTS FROM HERE.. */
+
+        display: grid;
+
+        grid-template-rows: repeat(2, 250px);
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 250px;
+
+        /* 'min-content' : width will be equal to the width of the biggest space taking thing of that container/item */
+        /* 'max-content' : width will be equal to the width of whole content of that container/item. applied with 'no-wrap' functionality.. */
+        /* 'minmax(min-size , max-size) is already defined...' */
+        /* grid-template-columns: 1fr min-content repeat(1, 1fr); */
+        /* grid-template-columns: 1fr max-content repeat(1, 1fr); */
+        /* grid-template-columns: 1fr minmax(250px, 1fr) 1fr; */
+        /* grid-template-columns: repeat(3, minmax(250px, 1fr)); */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+
+        /* Grid Gaps */
+
+        /* gap: 5px; */
+      }
+
+      .container .grid-container .item {
+        display: grid;
+        place-items: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      .item-1 {
+        background-color: #68304e;
+        /* Changes the position of a grid to a specific position... */
+        /* grid-row-start: 2;
+        grid-row-end: 3; */
+        /* grid-column-start: 2;
+        grid-column-end: 3; */
+        /* following are short hand for upper 2. 'grid-row||column: start/end;' */
+        /* grid-row: 2/3;
+        grid-column: 2/3; */
+        /* for further shortning of it : 'grid-area: g-r-s/g-c-s/g-r-e/g-c-e;' */
+        /* grid-area: 2 / 2 / 3 / 3; */
+      }
+
+      .item-2 {
+        background-color: #1e404c;
+        /* grid-area: 1/2/2/4; */
+      }
+
+      .item-3 {
+        background-color: #1d355b;
+      }
+
+      .item-4 {
+        background-color: #855041;
+        /* grid-row: 2/3;
+        grid-column: 1/2; */
+        /* grid-area: 2 / 1 / 3 / 2; */
+      }
+
+      .item-5 {
+        background-color: #4b4b4b;
+      }
+
+      .item-6 {
+        background-color: #825b70;
+      }
+
+      @media (width > 937px) {
+        .container .grid-container {
+          grid-template-columns: repeat(3, minmax(250px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! GRID
+    ------
+
+      ? CSS Grid layout, often referred to simply as a grid, is a two dimensional layout system in CSS.
+      ? this allows you to design complex web layouts with rows and columns. it provides a highly flexible and precise way to arrange and align content on a webpage.
+
+        ? types:
+
+        ? 1 : two-dimensional grid:
+        * unlike traditional layout models, such as the box model and flexbox, CSS Grid is a two-dimensional layout system. it simultaneously manages both rows and columns.
+        
+        ? 2 : Grid Container and Grid Items:
+        * a grid layout consists of grid container and grid items.
+        * the grid container is an element that contains grid items. its an immedietly parent element.
+        * grid items are the children of the grid container and they are positioned within grid.
+
+        ? 3 : defining grid:
+        * to create a grid you first have to define the columns and rows.
+        * use the 'grid-template-columns' and 'grid-template-rows' properties to set the sizes and structure of the grid.
+        * columns and rows can be specified as fixed sizes (e.g, pixels) or flexible sizes (e.g, percentages '%' , fractions 'fr').
+
+        ? 4 : grid lines and tracks:
+        * grid lines are the dividing lines between columns and rows.
+        * grid tracks are the space between grid lines where the content can be placed.
+        * you can name grid lines and tracks for better organizations.
+
+        ? 5 : placing grid items:
+        * grid items are placed within the grid using the 'grid-column' and 'grid-row' properties.
+        * you can also use the shorthand property 'grid-area' to specify both column and row placement in a single direction.
+
+        ? Explicit VS Implicit GRID:
+        ----------------------------
+
+        ? 6 : Grid gaps:
+        * grid gaps are spaces between grid items and tracks.
+        * you can control gaps between columns and rows seperately using the 'column-gap' and 'row-gap' properties or the shorthand 'gap'.
+        * gap syntax => gap: 'row-gap' 'column-gap';
+
+        ? 7 : grid auto:
+        * grid-items can be automatically placed using 'grid-auto-row'. by default, they fill rows but you can change this behaviors to fill column.
+        * 'grid-auto-rows' and 'grid-auto-columns' controls the size of automatically placed items.
+
+        ? 8 : responsive grids:
+        * CSS grid is highly responsive. grid items can be repositioned and resized automatically as the viewport size changes.
+        * use media queries to adjust grid layouts for different screen sizes.
+
+        ? 9 : alignment and justification:
+        * you can align and justify content within grid items and the grid container itself.
+        * properties like, justify-items, align-items, justify-content, align-content help you to control alignment and spacing.
+
+      ? few IMP functions:
+
+        ? 1 : repeat(no.of times , size);
+        * used very often when we are going to define the row and column when the sizes of each row or columns should be same.
+
+        ? 2 : minmax(min_value , max_value);
+        * this is used to set the minimum and maximum size of anything. it is adjusted the size from the minimum and maximum size according to situations.
+    -->
+
+    <div class="container">
+      <div class="grid-container">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+      </div>
+    </div>
+  </body>
+</html>

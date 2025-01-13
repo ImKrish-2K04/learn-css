@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-6</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container .box {
+        /* display: none; */
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        background-color: blue;
+        background-image: linear-gradient(123deg, #ffffff 0%, #00b2ff 100%),
+          linear-gradient(236deg, #baff99 0%, #005e64 100%),
+          linear-gradient(
+            225deg,
+            #0094ff 1%,
+            #bff4ed 45.5%,
+            #ff004e 60.6%,
+            #280f34 70.3%,
+            #b30753 81.6%,
+            #e41655 85.1%,
+            #b30753 100%
+          ),
+          linear-gradient(
+            135deg,
+            #0e0220 0%,
+            #000000 6px,
+            #e40475 24.8%,
+            #0e0220 35%,
+            #48e0e4 56.3%,
+            #48e0e4 62.4%,
+            #ff00c8 72.9%,
+            #000000db 78.5%,
+            #48e0e4 100%
+          );
+        background-blend-mode: overlay, overlay, darken, normal;
+
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .container .box2 {
+        display: none;
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        background-color: #000;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .container > .box2 > img {
+        filter: drop-shadow(0 0 5px #f0f);
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        ! BOX-SHADOWs
+        -------------
+
+        ? Syntax: 
+        * box-shadow: x-offset | y-offset | blur-radius | density/spread | color;
+        --<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--
+        * box-shadow property is simply used to add a shadow across the box or a container or simple an element...
+        * it is used to make an element or suppose if we are creating a card then we can simply add some shadows around the box to make its look more elegant!!
+        * we can add more than one box-shadows using comma seperator(',') to make a complex shadow effect for an element...
+
+        ! DROP-SHADOWs
+        --------------
+
+        ? Syntax: 
+        * filter: drop-shadow(x-offset | y-offset | blur-radius | density/spread | color);
+        --<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--
+        * we can't use drop-shadow as we are using box-shadow, because it is a value of 'filter' property and it takes the same values as the box-shadow takes...
+        * when we have to add a shadow across any box type element or a container then we are simply using the box-shadow css property, but what if we have to set some shadow across png type image?? it can add shadows at the border of png image using box-shadow, because box-shadow works same as the border for png images which has a transparent type behavior!
+        * therefore, for the solution of this problem the developers have created 'drop-shadow' property which adds shadows to the border of png like images... let's see it!
+    -->
+
+    <div class="container">
+      <div class="box"></div>
+      <div class="box2">
+        <img src="../others/images/cat pic.png" alt="cat image" />
+      </div>
+    </div>
+  </body>
+</html>

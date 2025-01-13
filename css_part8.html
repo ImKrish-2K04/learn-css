@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-8</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /*
+        use of descendant combinator
+        ----------------------------
+        .container p {
+          color: red;
+          font-size: 30px;
+          line-height: 1.6;
+        }
+        * here each and every 'p' inside of '.container' are selected and styled...
+  
+        use of child combinator
+        -----------------------
+        .container > p {
+          color: red;
+          font-size: 30px;
+        }
+        * here 'p' is the direct child of '.container' and therefore it is selected and styled...
+  
+        use of adjacent combinator
+        --------------------------
+        .second_para + .inner_most > span {
+          color: red;
+          font-size: 30px;
+        }
+        * the '.inner_most' is the next sibling of the '.second_para' and therefore it is selected and then its child 'span' is selected and styled...
+  
+        general sibling combinator
+        --------------------------
+        p ~ h1 {
+          color: cadetblue;
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          font-size: 50px;
+          text-shadow: -3px -1px 3px black;
+        }
+        * here p and h1 both are the child of the same parent and the h1 which is coming after p is gonna be style because of ~ combinator...
+        */
+    </style>
+  </head>
+  <body>
+    <!-- 
+        ! ANCHOR STATEs IN CSS
+        ----------------------
+
+        ? there are 4 main anchor states and we have to use them by maintaining their order of use...
+
+        ? 1) a:link
+        *       it is used to style the link and this styling is visible when the link is not clicked even once...
+
+        ? 2) a:visited
+        *       it is used to style the link for making those style visible after clicking the link or we can say after visiting that link when we see that link again then we can see this styling applied on that link...
+
+        ? 3) a:hover
+        *       it is used to style the link to be visible when we are hovering over the link with the cursor...
+
+        ? 4) a:active
+        *       it is used to style the link to be visible when we are holding the link with mouse cursor, means the link becomes active during the holding it...
+
+        ! COMBINATORs
+        -------------
+
+        ? css combinators are used to define relationship between different elements in your html document. they allow you to target element based on their position and hierarchy within the document structure...
+
+        ? Descendant combinator (a space)
+        * selects elements that are descendants of a particular element...
+        * it will work if the elements matches by the first selector is a parent of elements matched by the second selector...
+
+        ? child combinator (>)
+        * selects an element that is a direct child of a particular element...
+        * when we are using this combinator between 2 css selectors it will check for does the elements referred by the second selector are the immediate children of the elements referred by the first css selector/ matched by the first css selector...
+
+        ? adjacent combinator (+)
+        * selects an element that is immediately preceded by another element...
+        * we can say it 'next sibling combinator' also...
+        * seperates 2 selectors (id / class / tagNames) and checks whether the second one is the exact next sibling of the first and the both are child of the same parent...
+        * if yes!, then the styling will be applied to the second one...
+
+        ? general sibling combinator (~)
+        * selects all elements that are siblings of another element and share the same parent...
+        * we can say it 'subsequent sibling combinator' also...
+        * this combinator is used to style those elements which comes after the first element not necessary to immediate but the next sibling and should both the childs of the same parent...
+
+        ? universal combinator (*)
+        * selects all elements of the html document...
+
+        ? namespace seperater (|) , column combinator (||)
+        * the above both are not useful at all. hence, we have skipped to talking about it now. you can have a reference about it on 'MDN Docs'
+    -->
+    <div class="container">
+      <p>hey there</p>
+      <div class="inner">
+        <p class="second_para">hello there</p>
+        <div class="inner_most">
+          <p>how are you?</p>
+          <span class="ones">hey sweet...</span>
+          <h1>i am GOD!</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

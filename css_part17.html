@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-17</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        background-color: lightslategray;
+        padding: 50px;
+      }
+
+      .box {
+        width: 150px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgba(96, 88, 88);
+        box-shadow: 0 0 15px black;
+        /* animation: moveMe;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate; */
+        /* animation: moveMe 3s ease-in-out infinite alternate; */
+
+        /* animation: moveMe 2s linear 2 alternate; */
+        animation: trip 2s linear infinite alternate;
+      }
+
+      /* @keyframes moveMe {
+        0% {
+          translate: 0%;
+        }
+        100% {
+          translate: calc(90vw - 50px);
+        }
+      } */
+
+      @keyframes trip {
+        0% {
+          background-color: #ffbb5cb5;
+          transform: translate(20%, 0%);
+        }
+        25% {
+          background-color: #fcbf49;
+          transform: translate(calc(90vw - 10%), 0%);
+        }
+        50% {
+          background-color: #000;
+          transform: translate(calc(90vw - 10%), 500px);
+        }
+        75% {
+          background-color: #fcbf49;
+          transform: translate(20%, 500px);
+        }
+        100% {
+          background-color: #ffbb5cb5;
+          transform: translate(20%, 0%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! ANIMATIONs
+    ------------
+
+    ? animation-name: this property specifies the name of the keyframe animation you want to apply to an element.
+    * ex: animation-name: myAnimation;
+
+    ? animation-duration: sets the duration of the animation in seconds (s) or miliseconds (ms).
+    * ex: animation-duration: 2s;
+
+    ? animation-timing-function: defines the timing function that determines the acceleration and deceleration of the animation.
+    * common values: ease, linear, ease-in, ease-out, ease-in-out and more...
+    * ex: animation-timing-function: ease-in-out;
+
+    ? animation-delay: specifies a delay before the animation starts. it can be in seconds (s) or miliseconds (ms).
+    * ex: animation-delay: 1s;
+
+    ? animation-iteration-count: sets the number of times an animation should repeat.
+    * values: infinite, 3, 2n(for even iterations).
+    * ex: animation-iteration-count: infinite;
+
+    ? animation-direction: determines whether the animation runs forwards, backwards or alternates between forward and backward cycles.
+    * values: normal, reverse, alternate, alternate-reverse.
+    * ex: animation-direction: alternate;
+    
+    ! VERY IMP..
+    ------------
+
+    ? '@keyframes'
+    * this is not a property but a rule used to define the animation's keyframes. keyframes specifies how the element should look at various points during the animation.
+
+    @keyframes {
+      from{
+      }
+      to{
+      }
+    }
+
+    ? shorthand:
+    * animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction] [animation-fill-mode] [animation-play-state];
+
+    * animation-name: Specifies the name of the @keyframes animation (required).
+
+    * animation-duration: Specifies the duration of the animation (e.g., 2s, 500ms) (required).
+
+    * animation-timing-function: Specifies the speed curve of the animation (e.g., linear, ease, ease-in-out). The default value is ease.
+
+    * animation-delay: Specifies the delay before the animation starts (e.g., 2s, 500ms). The default value is 0s.
+
+    * animation-iteration-count: Specifies the number of times the animation should run (e.g., 1, infinite). The default value is 1.
+
+    * animation-direction: Specifies whether the animation should play in reverse on alternate cycles (normal, reverse, alternate, alternate-reverse). The default value is normal.
+
+    * animation-fill-mode: Specifies the style applied to the element when the animation is not playing (none, forwards, backwards, both). The default value is none.
+
+    * animation-play-state: Specifies whether the animation is running or paused (running, paused). The default value is running.
+    -->
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

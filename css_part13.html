@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-13</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        user-select: none;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container .box {
+        width: 70%;
+        height: 70%;
+        /* width: auto;
+        height: auto; */
+        border-radius: 5px;
+        box-shadow: #1b6700 0px 2px 4px 0px, #000000 0px 2px 16px 0px;
+        background-image: linear-gradient(to right, #000000, #0f9b0f);
+        padding: 5px;
+
+        display: flex;
+        /* flex-direction: column; */
+        /* flex-direction: row; // by-default*/
+        gap: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        /* justify-content: center;
+        align-items: stretch; */
+        position: relative;
+      }
+
+      .container .box .item {
+        height: 100px;
+        width: 100px;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        background-image: linear-gradient(to right, #000000, #434343);
+        box-shadow: 2px 2px 10px -3px black;
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+      }
+
+      .container .box .item:hover {
+        box-shadow: 1px 1px 6px -3px white;
+      }
+
+      .container .box .item3 {
+        align-self: flex-end;
+        transition: 1s ease-in-out;
+      }
+
+      .container .box .item3:hover {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    ! FLEXBOX
+    ---------
+
+      ? flexbox is a one dimensional layout model that helps you distribute space along a single axis (i.e either horizontally or vertically) in a flexible and efficient way. it allows you to align and distribute elements within a container, making it easier to create complex layouts without using floats and positioning.
+
+      ? flex-container properties (parent-properties)
+
+        ? 1 : Flex Container ('display: flex'):
+        * to create a flexbox layout, you need a flex container. apply 'display: flex;' to the container element.
+
+        ? 2 : Flex Items:
+        * elements inside the flex container are called flex items.
+        * flex items can be aligned and distributed along the main axis (horizontal or vertical).
+
+        ? 3 : Main Axis && Cross Axis:
+        * In a flex container, one axis is considered as a main-axis (either x-axis or y-axis) and the other one is considered as a cross axis.
+        * you can set the main axis to be either horizontal (row) or vertical (column).
+
+        ? 4 : Flex Direction (flex-direction):
+        * use 'flex-direction' property to specify the direction to either main-axis or cross-axis.
+        * values: row , row-reverse , column , column-reverse.
+        * if a 'flex-direction' is set to row then the main-axis will be horizontal and if it is set to column then the main-axis will be vertical.
+        * there are few properties which are fully depended on 'flex-direction' property to be styled...
+
+        ? 5 : justify-content:
+        * justify-cotent aligns the flex-items along the main-axis.
+        * if the flex-direction is 'row' then it will aligns items on the 'x-axis' and if flex-direction is set to 'column' then it will aligns items on the 'y-axis'.
+        * this way justify-content property is fully dependent on the value of 'flex-direction' property.
+        * values: flex-start (or you use 'start') , flex-end (or use 'end') , center , space-between , space-around , space-evenly and more...
+
+        ? 6 : align-items:
+        * align-items aligns the flex-items along the cross-axis.
+        * if the flex-direction is set to 'row' then it will aligns items along with 'y-axis' else if set to 'column' then it will aligns items along with 'x-axis'.
+        * just as same as 'justify-content' this property is also fully dependent on the value of 'flex-direction' property.
+        * values: flex-start (or you use 'start') , flex-end (or use 'end') , center , stretch , baseline and more...
+
+        ? 7 : flex-wrap:
+        * specifies whether flex-items should wrap to the next line when they are going to be overflows from the flex-container.
+        * values: nowrap(default) , wrap , wrap-reverse.
+
+        ? 8 : align-content:
+        * aligns multiple lines of flex items when there is extra space along the cross-axis.
+        * values: flex-start , flex-end , center , space-between , space-around , stretch , etc...
+
+      ? Flex-Item properties (children-properties):
+
+        ? 1 : order:
+        * determines the order in which a flex-item appears relative to other flex-items within the container.
+        * lower values comes first.
+
+        ? 2 : flex-grow:
+        * specifies how much a flex item should be grown to fill available space along with the main-axis.
+        * default value is 0 - meaning it won't grow.
+
+        ? 3 : flex-shrink:
+        * specifies how much a flex-item should shrink between there isn't enough space along the main-axis.
+        * default value is 1 - meaning it will shrink.
+
+        ? 4 : flex-basis:
+        * defines the initial size of a flex-item along the main-axis.
+        * default value is auto, which means the item's size is determined by its content.
+
+        ? 5 : flex (shorthand for flex-grow , flex-shrink and flex-basis):
+        * combines three flex-item properties in one declaration.
+
+      ? alignment properties (self):
+        
+        ? 1 : align-self:
+        * overrides the align-items property for an individual flex-item.
+        * allows you to align a single item differently from others.
+    -->
+
+    <div class="container">
+      <div class="box">
+        <div class="item item1">item 1</div>
+        <div class="item item2">item 2</div>
+        <div class="item item3">item 3</div>
+        <div class="item item4">item 4</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-3</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- 
+        ! UNITS:
+        --------
+
+        ? there are 2 types of 'CSS UNITS'
+        
+        *   1) Absolute, 2) Relative
+
+            ? 1) Absolute units
+            * these are fixed size units. means are not responsive as per display...
+            *************
+            * UNITS:
+            *************
+            * Pexels (px) // an absolute unit of measurement, smallest unit of screen place...
+            * inches (in) // these are not used at all anywhere!
+            * points (pt) // these are not used at all anywhere!
+            *************
+
+            ? 2) Relative units
+            * these are responsive, some depended over parent-size and some depended on display size...
+            *************
+            * UNITS:
+            *************
+            * em // is a relative unit that is calculated based on the parent element's size or the containing block...
+            *    // 1em = 16px;
+            *    // when you sets an element's size in em, it's relative to the font size of nearest parent with a specified font size...
+
+            * root em (rem) // rem is also a relative unit like em, but it's based on the font size of root (html)...
+            *    // using rem ensures that the size is consistent throughout the entire document, making especially useful and responsive design..
+            
+            * percentage (%) // relative units based on the parent element's size or the containing block's...
+            *************
+
+        ? 100% = 16px; so, 6.25% = 1px
+      
+      ! FONTS:
+      --------
+
+      * font-family  : used to set different types of font on our webpage...
+      * font-size    : used to set the size of fonts to be visible on our webpage...
+      * font-weight  : used to set the boldness or lighterness of fonts on our webpage like, 100-900, bold, bolder, lighter, etc...
+      * font-variant : used to set the various variant on the font like normal, small-caps, etc...
+      * font-style   : used to style the font in terms of italic, oblique, default, etc...
+
+
+      ? to use custom fonts in our website, we need to use '@font-face' rule,
+      ? there are 2 properties with it is, font-family, src...
+      @font-face {
+        font-family: ;
+        src: url('');
+      }
+
+      ? here one imp thing, you must have to download your required font from any website and then you can save that font into the root directory of you are creating one, you can give a custom name to that font using font-family and then in src property you have to use url('') and give it the path of the font where it is! and then wherever you need that font you just have to use it! simple nah!?
+
+      ? one more important topic is a callback font! -> when we are using font-family there is so much font we are using with the help of ',' because, if our first font is not able to render by any particular browser then it will go for the next one. so it is required to use at least 2 fonts of different types or different fonts at once using comma so if one is not useful then other will take its chance... ex: 'font-family: Verdana, Arial, Lucida sans, sans-serif'
+
+      ! TEXTS:
+      --------
+
+      * there are multiple text-related properties but the following are mostly used and if you want to check more about text-properties then have a reference by 'MDN' or 'w3schools' websites...
+
+      ? text-alignment
+      * used to align the text inside a box according to its horizontal position, i.e. center, left, right, justify, etc...
+
+      ? text-decoration
+      * used to decorate the text using underline and the line above text, it can be used with values like, underline, dashed, dotted, double, etc...
+
+      ? text-transform
+      * used to transform the text with the help of values: capitalize, lowercase, uppercase, etc...
+
+      ? line-height
+      * used to specify the height between lines in a paragraph like blocks...
+
+      ? letter-spacing
+      * the letter-spacing property controls the spacing between characters in a text...
+
+      ? word-spacing
+      * the word-spacing property controls the spacing between words in a text...
+
+      ? white-space
+      * is used to control how white space within an element is handled... values: wrap, no-wrap, etc...
+
+      ? text-shadow
+      * is allows us to add shadow effect to text-characters
+      * syntax: text-shadow: offset-x , offset-y , blur-radius , color
+      * you can give either negative or positive values for offset-x/y
+    -->
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tutorial-9</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+
+      /*body {
+        background-color: black;
+        color: white;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        font-size: 75px;
+        color: #2d2727;
+        text-shadow: -1.5px 0px 3px orangered;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        border: 2px solid #41342e;
+        width: 53.4%;
+        right: 0;
+        bottom: 7.5px;
+      } */
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .container ul {
+        width: fit-content;
+        height: 215px;
+        list-style-type: none;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.9) 0 4px 10px -3px;
+        font-size: 25px;
+      }
+
+      .container ul li:hover {
+        color: red;
+        background-color: black;
+        padding: 3px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .container ul p {
+        border-bottom: 2px solid black;
+        margin-bottom: 10px;
+      }
+
+      .container ul li:nth-child(3) {
+        color: green;
+      }
+
+      /*li:nth-of-child(n)  ||  li:first-of-type  ||  li:last-of-type*/
+      /* .container ul li:nth-of-type(5) {
+        color: red;
+        background-color: black;
+        padding: 3px;
+        border-radius: 5px;
+      }*/
+    </style>
+  </head>
+  <body>
+    <!-- 
+      ! CSS PSEUDO ELEMENTs
+      ---------------------
+        
+        ? pseudo elements are always starts with '::' and followed by its name...
+        * ex: ::selection, ::after, ::before, ::placeholder, etc... visit MDN Docs for further informations in much deeper manner...
+
+        ? '::before' Pseudo-Element
+        ---------------------------
+        * the ::before pseudo-element is used to insert content before the content of an element...
+        * it is ofter employed to add decorative elements, icons, or text before an element without modifying the actual HTML content...
+
+          ? Syntax:
+
+          selector::before {
+            content: 'etc...';
+            additional css properties...
+          }
+
+        ? '::after' Pseudo-Element
+        --------------------------
+        * the '::after' pseudo-element functions similarly to '::before', but it inserts content after the content of an element.
+        * it's often used for adding decorative elements, icons, or textual information after an element's content...
+
+          ? Syntax:
+
+          selector::after {
+            content: 'etc...';
+            additional css properties...
+          }
+        
+      ! CSS PSEUDO-CLASSes
+      --------------------
+
+        ? css pseudo classes can be identified as it is preceded by ':' and followed by its name...
+
+        * there are many classes like, :hover, :first-child, :last-child, :nth-child(n), :first-of-type, :last-of-type, etc... for more, visit on MDN Docs...
+
+        ? some most imp thing related to 2 properties of Pseudo-Classes....
+        
+        ? 1) :first-child
+        * this will selects the element if and only if it is a first children of its parent element...
+
+        ? 2) :nth-child(n)
+        * this will selects the element if and only if that child is positioned on nth position in its parent element...
+    -->
+
+    <!-- <h2>Best CSS course ever</h2> -->
+
+    <div class="container">
+      <ul>
+        <p>i am paragraph.</p>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+      </ul>
+      <ul>
+        <p>i am paragraph.</p>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+      </ul>
+    </div>
+  </body>
+</html>
